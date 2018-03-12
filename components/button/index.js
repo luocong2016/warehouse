@@ -37,11 +37,11 @@ export default class Button extends React.Component {
     loading: false,
     pressIn: false,
     pressOut: false,
-    onClick: () => null,
-    onPressIn: () => null,
-    onPressOut: () => null,
-    onShowUnderlay: () => null,
-    onHideUnderlay: () => null,  
+    onClick: () => {},
+    onPressIn: () => {},
+    onPressOut: () => {},
+    onShowUnderlay: () => {},
+    onHideUnderlay: () => {},  
   }
 
   onPressIn = (...arg) => {
