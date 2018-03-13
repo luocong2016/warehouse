@@ -141,6 +141,8 @@ export default class Item extends React.Component {
     wrap: PropsTypes.bool,
     disabled: PropsTypes.bool,
     multipleLine: PropsTypes.bool,
+    iconSize: PropsTypes.number,
+    iconColor: PropsTypes.string,
     arrow: PropsTypes.oneOf(['horizontal', 'up', 'down', 'empty']),
     align: PropsTypes.oneOf(['top', 'middle', 'bottom']),
     style: PropsTypes.oneOfType([PropsTypes.array, PropsTypes.object]),
@@ -162,6 +164,8 @@ export default class Item extends React.Component {
 
   render() {
     const {
+      iconSize,
+      iconColor,
       style,
       styles,
       children,
@@ -182,7 +186,7 @@ export default class Item extends React.Component {
     const numberOfLines = wrap === false ? { numberOfLines: 1 } : {};
     const contentDom = contentDomFunc(itemStyles, numberOfLines, children);
     const extraDom = extraDomFunc(itemStyles, numberOfLines, extra);
-    const arrEnum = arrEnumFunc();
+    const arrEnum = arrEnumFunc(iconSize, iconColor);
     const underlayColor =
       (!disabled && onClick)
       ?

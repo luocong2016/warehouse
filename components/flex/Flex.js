@@ -8,9 +8,9 @@ export default class Flex extends React.Component {
     children: PropTypes.any,
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
     direction: PropTypes.oneOf(['row', 'column']),
-    wrap: PropTypes.oneOf(['nowrap', 'wrap', 'wrap-reverse']),
+    wrap: PropTypes.oneOf(['nowrap', 'wrap']),
     justify: PropTypes.oneOf(['start', 'end', 'center', 'between', 'around', 'evenly']),
-    align: PropTypes.oneOf(['start', 'center', 'end', 'baseline', 'stretch']),
+    align: PropTypes.oneOf(['start', 'center', 'end', 'stretch']),
     onPress: PropTypes.func,
     onLongPress: PropTypes.any,
     onPressIn: PropTypes.any,
@@ -33,15 +33,12 @@ export default class Flex extends React.Component {
     transferConst = transferConst.map(el => {
       switch(el) {
         case 'start':
-          return 'flex-start';
         case 'end':
-          return 'flex-end';
+          return `flex-${el}`;
         case 'between':
-          return 'space-between';
         case 'around':
-          return 'space-around';
         case 'evenly':
-          return 'space-evenly';
+          return `space-${el}`;
         default:
           return el;
       }

@@ -89,6 +89,15 @@ export default class FlexExample extends React.Component {
           <Circle />
           <Circle />
         </Flex>
+
+        <Text>justify="evenly":每个项目均匀分布</Text>
+        <Flex justify="evenly">
+          <Circle />
+          <Circle />
+          <Circle />
+          <Circle />
+          <Circle />
+        </Flex>
       
         <Text style={{ marginTop: 10, marginBottom: 5, backgroundColor: 'skyblue' }}>项目在交叉轴上的对齐方式</Text>
 

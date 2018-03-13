@@ -19,7 +19,7 @@ export default class BasicListExample extends React.Component {
           <Item wrap onPressIn={() => alert('in')} onPressOut={() => alert('out') }>文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行</Item>
           <Item disabled extra="箭头向右" arrow="horizontal" onClick={() => {}}>标题文字</Item>
           <Item extra="箭头向下" arrow="down" onClick={() => {}}>标题文字</Item>
-          <Item extra="箭头向上" arrow="up" onClick={() => {}}>标题文字</Item>
+          <Item extra="箭头向上" arrow="up" iconColor="red" iconSize={30} onClick={() => {}}>标题文字</Item>
           <Item extra="没有箭头" arrow="empty">标题文字</Item>
           <Item
             multipleLine
