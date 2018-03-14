@@ -1,12 +1,12 @@
 export function getComponentLocale(props, context, componentName, getDefaultLocale) {
-  let locale = {}, result = {};
-  if ( context && context.warehouseLocale && warehouseLocale[componentName]) {
-    locale = context.warehouseLocale[componentName]
+  let locale = {};
+  if ( context && context.warehouseLocale && context.warehouseLocale[componentName]) {
+    locale = context.warehouseLocale[componentName];
   } else {
     const defaultLocal = getDefaultLocale();
     locale = defaultLocal.default || defaultLocal;
   }
-  result = { ...locale };
+  let result = { ...locale };
   if(props.locale) {
     result = { ...result, ...props.locale };
     if (props.locale.lang) {

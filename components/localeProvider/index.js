@@ -13,7 +13,7 @@ export default class LocaleProvider extends React.Component {
     warehouseLocale: PropTypes.object,
   }
 
-  getChildCContext() {
+  getChildContext() {
     return {
       warehouseLocale: {
         ...this.props.locale,
