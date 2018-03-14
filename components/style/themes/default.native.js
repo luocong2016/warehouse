@@ -1,5 +1,17 @@
+import color from 'color';
+import { Platform } from 'react-native';
+
+const black = '#000000';
 const brandPrimary = '#108ee9';
 const brandPrimaryTap = '#1284d6';
+
+const isIOS = Platform.OS === 'ios';
+const fonts = {
+  regular: isIOS ? 'Helvetica Neue' : 'sans-serif',
+  medium: isIOS ? 'HelveticaNeue-Medium' : 'sans-serif-medium',
+  light: isIOS ? 'HelveticaNeue-Light' : 'sans-serif-light',
+  thin: isIOS ? 'HelveticaNeue-Thin' : 'sans-serif-thin',
+}
 
 export default {
   // 支付宝钱包默认主题
@@ -39,6 +51,9 @@ export default {
 
   // 边框色
   border_color_base: '#dddddd',
+
+  // 字体样式
+  fonts,
 
   // 字体尺寸
   // ---
@@ -119,6 +134,18 @@ export default {
   modal_font_size_heading: 18,
   modal_button_font_size: 18, // 按钮字号
   modal_button_height: 50, // 按钮高度
+  modal_dark: false,
+  modal_roundness: 2,
+  modal_colors: {
+    primary: brandPrimary,
+    accent: '#ff4081',
+    background: '#fafafa',
+    paper: '#ffffff',
+    text: black,
+    disabled: color(black).alpha(0.26).rgb().string(),
+    placeholder: color(black).alpha(0.38).rgb().string(),
+  },
+
   // list
   list_title_height: 30,
   list_item_height_sm: 35,

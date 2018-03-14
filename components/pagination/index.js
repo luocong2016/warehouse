@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { View, Text, TouchableWithoutFeedback, StyleSheet } from 'react-native';
 import zh_CN from './locale/zh_CN'
 import paginationStyle from './style/index.native';
-import { getComponentLocale } from '../_util/getLocale'
+import { getComponentLocale } from '../_util/getLocale';
 import Button from '../button';
 import Flex from '../flex';
 
