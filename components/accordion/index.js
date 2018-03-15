@@ -51,7 +51,7 @@ class Accordion extends React.Component {
             </View>
           )
         }
-        <Icon name={`keyboard-arrow-${isActive ? 'up' : 'down'}`} size={iconSize} color={iconColor} />,
+        <Icon name={`keyboard-arrow-${isActive ? 'up' : 'down'}`} size={iconSize} color={iconColor} />
       </View>
     );
   }
