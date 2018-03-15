@@ -6,6 +6,7 @@ import List from './list';
 import LocaleProvider from './localeProvider';
 import Modal from './modal';
 import Pagination from './pagination';
+import Radio from './radio';
 
 export {
   Accordion,
@@ -16,4 +17,5 @@ export {
   LocaleProvider,
   Modal,
   Pagination,
+  Radio,
 };
