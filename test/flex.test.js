@@ -151,3 +151,6 @@ export default class FlexExample extends React.Component {
     );
   }
 }
+
+export const title = 'Flex';
+export const description = 'Flex Example';

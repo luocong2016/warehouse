@@ -37,3 +37,6 @@ export default class LocaleProviderExample extends React.Component {
     );
   } 
 }
+
+export const title = 'LocaleProvider';
+export const description = 'LocaleProvider Example';

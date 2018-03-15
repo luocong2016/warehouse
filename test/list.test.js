@@ -5,7 +5,7 @@ import { List } from '../components';
 const Item = List.Item;
 const Brief = Item.Brief;
 
-export default class BasicListExample extends React.Component {
+export default class ListExample extends React.Component {
   render() {
     return (
       <ScrollView

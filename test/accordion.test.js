@@ -1,0 +1,32 @@
+import React from 'react';
+import { View } from 'react-native';
+import { Accordion, List } from '../components';
+
+export default class AccordionExmple extends React.Component {
+  onChange = (key) => {
+    console.log(key);
+  }
+
+  render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <Accordion onChange={this.onChange} defaultActiveKey="2">
+          <Accordion.Panel header="Title 1">
+            <List>
+              <List.Item>Content 1</List.Item>
+              <List.Item>Content 2</List.Item>
+              <List.Item>Content 3</List.Item>
+            </List>
+          </Accordion.Panel>
+          <Accordion.Panel header="Title 2">this is panel content2 or other</Accordion.Panel>
+          <Accordion.Panel header="Title 3">
+            Text text text text text text text text text text text text text text text
+          </Accordion.Panel>
+        </Accordion>
+      </View>
+    );
+  }
+}
+
+export const title = 'Accordion';
+export const description = 'Accordion Example';

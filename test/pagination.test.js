@@ -7,7 +7,7 @@ const locale = {
   nextText: '下一步',
 };
 
-export default class BasicPaginationExample extends React.Component {
+export default class PaginationExample extends React.Component {
   render() {
     return (
       <View>
@@ -22,3 +22,6 @@ export default class BasicPaginationExample extends React.Component {
     );
   }
 }
+
+export const title = 'PaginationExample';
+export const description = 'Pagination Example';

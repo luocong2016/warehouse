@@ -1,3 +1,4 @@
+import Accordion from './accordion';
 import Button from './button'
 import Drawer from './drawer';
 import Flex from './flex';
@@ -7,6 +8,7 @@ import Modal from './modal';
 import Pagination from './pagination';
 
 export {
+  Accordion,
   Button,
   Drawer,
   Flex,

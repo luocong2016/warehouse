@@ -2,12 +2,6 @@ import React from 'react';
 import { StyleSheet, View, ScrollView, Text } from 'react-native';
 import { Drawer, List, Button } from '../components';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
 export default class DrawerExample extends React.Component {
   drawer;
 
@@ -41,7 +35,7 @@ export default class DrawerExample extends React.Component {
     });
 
     const sidebar = (
-      <ScrollView style={[styles.container]}>
+      <ScrollView style={{ flex: 1 }}>
         <List>{itemArr}</List>
       </ScrollView>
     );
@@ -62,3 +56,6 @@ export default class DrawerExample extends React.Component {
     );
   }
 }
+
+export const title = 'Drawer';
+export const description = 'Drawer Example';
