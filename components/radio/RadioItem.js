@@ -27,19 +27,17 @@ export default class RadioItem extends React.Component {
 
   rendContentDOM = () => {
     const { children, disabled, styles } = this.props;
-    console.log('render')
-
-    if ( children && React.isValidElement(children)) {
-      return (
-        <View style={{ flex: 1 }}>{children}</View>
-      );
-    } else {
-      let contentStyle = [styles.radioItemContent, disabled ? styles.radioItemContentDisable : {}];
-
-      return (
-        <Text style={contentStyle} numberOfLines={1}>{children}</Text>
-      );
-    }
+    return React.Children.map(children, (child, index) => {
+      if (React.isValidElement(child)) {
+        return child;
+      } else {
+        const contentStyle = [styles.radioItemContent, disabled ? styles.radioItemContentDisable : {}];
+        return (
+          <Text style={contentStyle} numberOfLines={1}>{child}</Text>
+        );
+      }
+    });
+    
   }
 
   handleClick = () => {
@@ -66,7 +64,7 @@ export default class RadioItem extends React.Component {
         onClick={disabled ? undefined : this.handleClick}
         extra={radioEl}
       >
-        {this.rendContentDOM}
+        {this.rendContentDOM()}
       </ListItem>
     );
   }
