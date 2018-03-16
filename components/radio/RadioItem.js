@@ -27,15 +27,20 @@ export default class RadioItem extends React.Component {
 
   rendContentDOM = () => {
     const { children, disabled, styles } = this.props;
+
     return React.Children.map(children, (child, index) => {
       if (React.isValidElement(child)) {
         return child;
-      } else {
+      }
+      
+      if (typeof child === 'string') {
         const contentStyle = [styles.radioItemContent, disabled ? styles.radioItemContentDisable : {}];
         return (
           <Text style={contentStyle} numberOfLines={1}>{child}</Text>
         );
       }
+
+      return null;
     });
     
   }
