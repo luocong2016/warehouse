@@ -37,7 +37,8 @@ export default class Radio extends React.Component {
   }
 
   renderType = () => {
-    const { checked, type, disabled, styles } = this.props;
+    const { checked } = this.state;
+    const { type, disabled, styles } = this.props;
 
     if (checked && type === 'none') {
       return <Icon name={'check'} size={16} color={disabled ? '#cccccc' : '#108ee9'} />
@@ -68,12 +69,12 @@ export default class Radio extends React.Component {
     }
 
     if (this.props.onChange) {
-      this.props.onChange({ checked: true });
+      const { checked } = this.state;
+      this.props.onChange({ checked });
     }
   }
 
   render() {
-    const { checked } = this.state;
     const { style, styles, disabled, children, type } = this.props;
 
     return (
