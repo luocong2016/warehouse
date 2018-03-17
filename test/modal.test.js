@@ -11,7 +11,6 @@ export default class ModalExample extends React.Component {
 
   render() {
     const { visible } = this.state;
-    console.log(visible, '!@#')
 
     return (
       <View>

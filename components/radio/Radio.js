@@ -12,10 +12,12 @@ export default class Radio extends React.Component {
 
   static defaultProps = {
     styles: RadioStyles,
+    type: 'none',
   };
 
   static propsTypes = {
     style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    type: PropTypes.oneOf(['circle', 'none']),
     styles: PropTypes.object,
     disabled: PropTypes.bool,
     children: PropTypes.any,
@@ -34,6 +36,28 @@ export default class Radio extends React.Component {
     }
   }
 
+  renderType = () => {
+    const { checked, type, disabled, styles } = this.props;
+
+    if (checked && type === 'none') {
+      return <Icon name={'check'} size={16} color={disabled ? '#cccccc' : '#108ee9'} />
+    }
+
+    if(type === 'circle') {
+      return (
+        <View style={[styles.radioTypeCircle , { borderColor: checked ? '#108ee9' : '#ccc' }]}>
+          {
+            checked
+            ? <Icon name={'check'} size={16} color={disabled ? '#cccccc' : '#108ee9'} />
+            : null
+          }
+        </View>
+      );
+    }
+
+    return null; 
+  }
+
   handleClick = () => {
     if (this.props.disabled) {
       return;
@@ -44,21 +68,19 @@ export default class Radio extends React.Component {
     }
 
     if (this.props.onChange) {
-      this.props.onChange({target: {checked: true}});
+      this.props.onChange({ checked: true });
     }
   }
 
   render() {
     const { checked } = this.state;
-    const { style, styles, disabled, children } = this.props;
+    const { style, styles, disabled, children, type } = this.props;
 
     return (
-      <TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={this.handleClick}>
         <View style={[styles.wrapper]}>
           {
-            checked
-            ? <Icon name={'check'} size={16} color={checked ? '#108ee9' : '#cccccc'} />
-            : null
+            this.renderType()
           }
           
           {
