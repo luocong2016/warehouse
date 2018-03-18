@@ -11,7 +11,7 @@ onChange | change 事件回调 | （e: Object） => void | -
 
 属性 | 说明 | 类型 | 默认值
 --- | --- | --- | ---
-extra | 固定<Radio /> | - | -
+extra | 固定Radio组建 | - | -
 
 属性 | 说明 | 类型 | 默认值
 --- | --- | --- | ---
