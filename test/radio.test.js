@@ -18,6 +18,7 @@ export default class RadioExample extends React.Component {
     value2: 0,
     value3: 0,
     value4: false,
+    value5: false,
   };
 
   onChange = (key, value) => {
@@ -63,6 +64,12 @@ export default class RadioExample extends React.Component {
       <List renderHeader={() => 'type'}>
         <List.Item>
           <Radio checked={this.state.value4} onChange={({checked}) => this.setState({ value4: !this.state.value4})} type="circle" >Agree</Radio>
+        </List.Item>
+      </List>
+
+       <List renderHeader={() => 'type disabled'}>
+        <List.Item>
+          <Radio disabled checked={this.state.value5} onChange={({checked}) => this.setState({ value4: !this.state.value4})} type="circle" >Agree</Radio>
         </List.Item>
       </List>
 

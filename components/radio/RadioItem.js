@@ -51,7 +51,7 @@ export default class RadioItem extends React.Component {
   }
 
   render() {
-    const { style, radioStyle, defaultChecked, disabled, checked, onChange } = this.props;
+    const { style, radioStyle, defaultChecked, disabled, checked, onChange, ...restProp } = this.props;
     const radioEl = (
       <Radio
         ref={refRadio}
@@ -68,6 +68,7 @@ export default class RadioItem extends React.Component {
         style={style}
         onClick={disabled ? undefined : this.handleClick}
         extra={radioEl}
+        {...restProp}
       >
         {this.rendContentDOM()}
       </ListItem>

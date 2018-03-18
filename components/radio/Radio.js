@@ -46,7 +46,13 @@ export default class Radio extends React.Component {
 
     if(type === 'circle') {
       return (
-        <View style={[styles.radioTypeCircle , { borderColor: checked ? '#108ee9' : '#ccc' }]}>
+        <View
+          style={[
+            styles.radioTypeCircle ,
+            { borderColor: checked && !disabled ? '#108ee9' : '#cccccc' },
+            disabled ? { backgroundColor: '#f5f4f9' } : {}
+          ]}
+        >
           {
             checked
             ? <Icon name={'check'} size={16} color={disabled ? '#cccccc' : '#108ee9'} />
